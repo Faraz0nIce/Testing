@@ -1,0 +1,26 @@
+# pos.kv
+<POSLayout>:
+    orientation: 'vertical'
+    price_label: price_label
+    final_price: 0.0
+
+    Label:
+        id: price_label
+        text: 'Final Price: $0'
+        font_size: 24
+
+    BoxLayout:
+        orientation: 'horizontal'
+        Button:
+            text: 'Bread (R1)'
+            on_press: app.update_price(1, "Bread")
+        Button
+            text: 'Milk (R2.99)'
+            on_press: app.update_price(2, "Milk")
+        Button:
+            text: 'Cheese (R3.99)'
+            on_press: app.update_price(3, "Cheese")
+
+    Button:
+        text: 'Checkout'
+        on_press: app.checkout()
